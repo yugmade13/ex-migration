@@ -30,7 +30,7 @@ class App extends Component {
         <Header />
         <div className="card-list">
           {data.map((item) => (
-            <Card key={item.firstName} {...item} />
+            <Card key={item.name} {...item} />
           ))}
         </div>
       </div>
