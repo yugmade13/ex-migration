@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Card extends Component {
   render() {
@@ -14,3 +15,8 @@ class Card extends Component {
 }
 
 export default Card;
+
+Card.propTypes = {
+  name: PropTypes.string,
+  avatar: PropTypes.string,
+}
