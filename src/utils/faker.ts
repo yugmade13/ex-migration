@@ -1,6 +1,11 @@
 import { faker } from '@faker-js/faker';
 
-const range = (len) => {
+export type Person = {
+  name: String;
+  avatar: string;
+}
+
+const range = (len: number) => {
   const arr = []
   for (let i = 0; i < len; i++) {
     arr.push(i)
@@ -8,15 +13,15 @@ const range = (len) => {
   return arr;
 }
 
-const newPerson = () => {
+const newPerson = (): Person => {
   return {
     name: faker.person.fullName(),
-    avatar: faker.image.avatar(200, 200),
+    avatar: faker.image.avatar(),
   }
 }
 
-export function makeData(...lens) {
-  const makeDataLevel = (depth = 0) => {
+export function makeData(...lens: number[]) {
+  const makeDataLevel = (depth = 0): Person[] => {
     const len = lens[depth]
     
     return range(len).map((d) => {

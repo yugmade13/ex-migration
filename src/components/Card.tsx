@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
+import { Person } from '../utils/faker';
 
-function Card({ name, avatar }) {
+function Card({ name, avatar }: Person) {
   return (
     <div className="card-item">
       <img className="avatar" src={avatar} alt={`av-${name}`} />
@@ -10,8 +10,3 @@ function Card({ name, avatar }) {
 }
 
 export default Card;
-
-Card.propTypes = {
-  name: PropTypes.string,
-  avatar: PropTypes.string,
-};

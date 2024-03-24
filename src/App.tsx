@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Card from './components/Card';
-import { makeData } from './utils/faker';
+import { makeData, Person } from './utils/faker';
 
 function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Person[]>([]);
 
   useEffect(() => {
     setData(makeData(10));
@@ -22,8 +22,8 @@ function App() {
     <div className="container">
       <Header />
       <div className="card-list">
-        {data.map((item) => (
-          <Card key={item.name} {...item} />
+        {data.map((item: Person, index: number) => (
+          <Card key={index} {...item} />
         ))}
       </div>
     </div>
